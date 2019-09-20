@@ -1,0 +1,29 @@
+{
+  "name": "phonebook-api",
+  "version": "1.0.0",
+  "description": "Phonebook api service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rynsahu/Phonebook-App.git"
+  },
+  "keywords": [
+    "phonebook"
+  ],
+  "author": "Aryan Sahu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rynsahu/Phonebook-App/issues"
+  },
+  "homepage": "https://github.com/rynsahu/Phonebook-App#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "joi": "^14.3.1",
+    "joi-objectid": "^2.0.0",
+    "mongoose": "^5.7.1"
+  }
+}
