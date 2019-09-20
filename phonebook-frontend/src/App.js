@@ -5,12 +5,13 @@ import ContactSummary from "./components/contactSummary";
 import { getContacts } from "./services/contactService";
 import NotFound from "./components/not-found";
 import ContactForm from "./components/contactForm";
+import Welcome from "./components/welcome";
 import "./App.css";
 
 class App extends Component {
   state = {
     contacts: [],
-    currentContactId: " "
+    currentContactId: "5d84bfce3fdd234704d35f3a"
   };
 
   async componentDidMount() {
@@ -49,13 +50,17 @@ class App extends Component {
         </div>
         <main className="row">
           <div className="col-3">
-            <Contacts contacts={contacts} onClick={this.handleClick} />
+            <Contacts
+              contacts={contacts}
+              currentContactId={currentContactId}
+              onClick={this.handleClick}
+            />
           </div>
           <div className="col-6">
             <Switch>
-              <Route path="/" exact component={ContactSummary} />
+              <Route path="/" exact component={Welcome} />
               <Route
-                path="/contactSummary"
+                path="/contactSummary/:id"
                 render={props => (
                   <ContactSummary
                     contacts={contacts}

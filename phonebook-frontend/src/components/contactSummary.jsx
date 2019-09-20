@@ -2,16 +2,19 @@ import React, { Component } from "react";
 
 class ContactSummary extends Component {
   state = {
-    contact: {
-      isFavorite: "",
-      name: "",
-      phone: "",
-      _id: ""
-    }
+    isFavorite: "",
+    _id: "",
+    name: "",
+    phone: ""
   };
 
+  componentDidMount() {
+    const contactId = this.props.match.params.id;
+    console.log(contactId);
+  }
+
   render() {
-    const { currentContactId } = this.props;
+    const { contacts, currentContactId } = this.props;
 
     return (
       <React.Fragment>
