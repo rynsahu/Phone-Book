@@ -1,0 +1,15 @@
+body {
+  padding: 15px;
+  margin: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.form {
+  padding: 1.2rem;
+  border: 1px solid #d1d5da;
+  border-radius: 5px;
+}
