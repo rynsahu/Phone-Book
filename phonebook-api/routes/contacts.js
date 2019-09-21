@@ -24,6 +24,7 @@ router.post("/", async (req, res) => {
   contact = new Contact({
     name: req.body.name,
     phone: req.body.phone,
+    email: req.body.email,
     isFavorite: req.body.isFavorite
   });
   await contact.save();
@@ -40,6 +41,7 @@ router.put("/:id", async (req, res) => {
     {
       name: req.body.name,
       phone: req.body.phone,
+      email: req.body.email,
       isFavorite: req.body.isFavorite
     },
     { new: true }

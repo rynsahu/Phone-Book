@@ -5,7 +5,7 @@ import { createContact } from "../services/contactService";
 
 class ContactForm extends Form {
   state = {
-    data: { name: "", phone: "" },
+    data: { name: "", phone: "", email: "" },
     errors: {}
   };
 
@@ -13,9 +13,15 @@ class ContactForm extends Form {
     name: Joi.string()
       .required()
       .label("Name"),
-    phone: Joi.string()
+    email: Joi.string()
       .required()
-      .label("Phone")
+      .email()
+      .label("Email"),
+    phone: Joi.string()
+      .length(12)
+      .required()
+      .regex(/91[0-9]{10}/)
+      .label("91 + phone no.")
   };
 
   doSubmit = async () => {
@@ -40,6 +46,7 @@ class ContactForm extends Form {
         <form onSubmit={this.handleSubmit} className="form-style">
           {this.renderInput("name", "Name")}
           {this.renderInput("phone", "Phone")}
+          {this.renderInput("email", "Email")}
           {this.renderButton("Submit")}
         </form>
       </div>
